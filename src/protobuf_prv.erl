@@ -25,6 +25,7 @@ init(State) ->
 
 -spec do(rebar_state:t()) -> {ok, rebar_state:t()} | {error, string()}.
 do(State) ->
+    io:format("~p", [rebar_state:dir(State)]),
     {ok, State}.
 
 -spec format_error(any()) ->  iolist().
