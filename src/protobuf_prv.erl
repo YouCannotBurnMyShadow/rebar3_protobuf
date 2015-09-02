@@ -25,7 +25,7 @@ init(State) ->
 
 -spec do(rebar_state:t()) -> {ok, rebar_state:t()} | {error, string()}.
 do(State) ->
-    lager:info("~p", [State]),
+    io:format("~p~n", [State]),
     % Apps = rebar_state:project_apps(State),
     % DepsToBuild = rebar_state:deps_to_build(State),
     % Deps = lists:flatten(lists:map(fun rebar_app_info:deps/1, Apps)),
