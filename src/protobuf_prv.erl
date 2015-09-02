@@ -25,14 +25,15 @@ init(State) ->
 
 -spec do(rebar_state:t()) -> {ok, rebar_state:t()} | {error, string()}.
 do(State) ->
-    Apps = rebar_state:project_apps(State),
-    DepsToBuild = rebar_state:deps_to_build(State),
+    lager:info("~p", [State]),
+    % Apps = rebar_state:project_apps(State),
+    % DepsToBuild = rebar_state:deps_to_build(State),
     % Deps = lists:flatten(lists:map(fun rebar_app_info:deps/1, Apps)),
     % SrcDirs = lists:map(fun rebar_app_info:dir/1, Apps),
     % OutDirs = lists:map(fun rebar_app_info:out_dir/1, Apps),
     % io:format("~p~n", [SrcDirs]),
     % io:format("~p~n", [OutDirs]),
-    io:format("~p~n", [DepsToBuild]),
+    % io:format("~p~n", [DepsToBuild]),
     {ok, State}.
 
 -spec format_error(any()) ->  iolist().
