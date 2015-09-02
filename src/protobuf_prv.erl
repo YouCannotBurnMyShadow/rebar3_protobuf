@@ -27,11 +27,11 @@ init(State) ->
 do(State) ->
     Apps = rebar_state:project_apps(State),
     Deps = lists:flatten(lists:map(fun rebar_app_info:deps/1, Apps)),
-    All = Apps ++ Deps,
-    SrcDirs = lists:map(fun rebar_app_info:dir/1, All),
-    OutDirs = lists:map(fun rebar_app_info:out_dir/1, All),
+    SrcDirs = lists:map(fun rebar_app_info:dir/1, Apps)
+    OutDirs = lists:map(fun rebar_app_info:out_dir/1, Apps),
     io:format("~p~n", [SrcDirs]),
     io:format("~p~n", [OutDirs]),
+    io:format("~p~n", [Deps]),
     {ok, State}.
 
 -spec format_error(any()) ->  iolist().
