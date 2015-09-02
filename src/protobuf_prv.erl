@@ -27,7 +27,7 @@ init(State) ->
 do(State) ->
     Apps = rebar_state:project_apps(State),
     Deps = lists:flatten(lists:map(fun rebar_app_info:deps/1, Apps)),
-    SrcDirs = lists:map(fun rebar_app_info:dir/1, Apps)
+    SrcDirs = lists:map(fun rebar_app_info:dir/1, Apps),
     OutDirs = lists:map(fun rebar_app_info:out_dir/1, Apps),
     io:format("~p~n", [SrcDirs]),
     io:format("~p~n", [OutDirs]),
